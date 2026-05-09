@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>AC: Apex of the Champions — Technology Development Team</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-close" id="mobileClose">✕</span>
+
+  <a href="#hero" onclick="closeMobile()">Home</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#skills" onclick="closeMobile()">Technologies</a>
+  <a href="#team" onclick="closeMobile()">Team</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#experience" onclick="closeMobile()">Achievements</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+
+  <div class="nav-logo">AC</div>
+
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Technologies</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Achievements</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Team</a></li>
+  </ul>
+
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+
+  <div class="hero-glow"></div>
+
+  <div class="hero-inner">
+
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Open for Collaborations & Technology Projects
+      </div>
+
+      <h1 class="hero-name">
+        AC: Apex of the<br>
+        <span>Champions</span>
+      </h1>
+
+      <p class="hero-title">
+        A Multidisciplinary Technology Development Team
+      </p>
+
+      <p class="hero-tagline">
+        AC: Apex of the Champions is a collaborative group of developers, researchers, and innovators focused on creating modern technology solutions in software development, embedded systems, mobile applications, and web technologies.
+      </p>
+
+      <div class="hero-ctas">
+
+        <a href="#projects" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+          </svg>
+          View Projects
+        </a>
+
+        <a href="#contact" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+          Contact Team
+        </a>
+
+      </div>
+    </div>
+
+    <div class="hero-visual">
+
+      <div class="phone-mockup">
+
+        <div class="phone-glow"></div>
+
+        <div class="orbit orbit-1">
+          <div class="orbit-dot"></div>
+        </div>
+
+        <div class="orbit orbit-2">
+          <div class="orbit-dot orbit-dot2"></div>
+        </div>
+
+        <div class="phone-frame">
+
+          <div class="phone-notch"></div>
+
+          <div class="phone-screen">
+
+            <div class="app-bar">
+              <div class="app-bar-dot" style="background:#ff5f57"></div>
+              <div class="app-bar-dot" style="background:#febc2e"></div>
+              <div class="app-bar-dot" style="background:#28c840"></div>
+            </div>
+
+            <div class="app-card" style="background:rgba(0,212,255,0.05);border:1px solid rgba(0,212,255,0.1)">
+              <div class="app-card-line" style="width:60%;background:rgba(0,212,255,0.2)"></div>
+              <div class="app-card-line" style="width:90%"></div>
+              <div class="app-card-line" style="width:75%"></div>
+            </div>
+
+            <div class="app-card" style="background:rgba(123,79,255,0.05);border:1px solid rgba(123,79,255,0.1)">
+              <div class="app-card-line" style="width:50%;background:rgba(123,79,255,0.2)"></div>
+              <div class="app-card-line" style="width:80%"></div>
+              <div class="app-card-line" style="width:65%"></div>
+              <div class="app-card-line" style="width:88%"></div>
+            </div>
+
+            <div class="app-card" style="background:rgba(0,151,255,0.05);border:1px solid rgba(0,151,255,0.1)">
+              <div class="app-card-line" style="width:45%;background:rgba(0,151,255,0.2)"></div>
+              <div class="app-card-line" style="width:70%"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+
+  <div class="section-inner">
+
+    <div class="about-grid">
+
+      <div class="about-visual reveal-left">
+
+        <div class="about-photo-container">
+
+          <div class="about-corner">💡</div>
+
+          <div class="about-photo">
+            <div class="photo-placeholder">AC</div>
+          </div>
+
+          <div class="about-badge">
+            <div class="num">2026</div>
+            <div class="lbl">Innovation Team</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="about-content reveal-right">
+
+        <div class="section-label">About The Team</div>
+
+        <h2 class="section-title">
+          Building Innovative<br>
+          Technology Solutions
+        </h2>
+
+        <p>
+          AC: Apex of the Champions is a collaborative technology development team composed of developers, researchers, designers, and innovators specializing in software engineering, embedded systems, mobile development, and modern web technologies.
+        </p>
+
+        <p>
+          The team focuses on creating innovative and research-driven systems designed for both academic and real-world applications.
+        </p>
+
+        <p>
+          By combining expertise in mobile apps, hardware integration, backend systems, and UI/UX design, the team delivers scalable and impactful technology solutions.
+        </p>
+
+        <div class="about-stats">
+
+          <div class="stat-card">
+            <div class="stat-num">6+</div>
+            <div class="stat-lbl">Core Members</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-num">4+</div>
+            <div class="stat-lbl">Major Projects</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-num">7+</div>
+            <div class="stat-lbl">Achievements</div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+
+  <div class="section-inner">
+
+    <div class="reveal">
+
+      <div class="section-label">Technical Expertise</div>
+
+      <h2 class="section-title">
+        Technologies & Expertise
+      </h2>
+
+      <p class="section-sub">
+        A multidisciplinary stack of technologies used in mobile development, embedded systems, software engineering, and modern web solutions.
+      </p>
+
+    </div>
+
+    <div class="skills-grid">
+
+      <div class="skill-card reveal delay-1">
+        <div class="skill-icon">🐦</div>
+        <div class="skill-name">Flutter</div>
+        <div class="skill-tag">Cross-platform Development</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-width="0.95"></div></div>
+      </div>
+
+      <div class="skill-card reveal delay-2">
+        <div class="skill-icon">⚡</div>
+        <div class="skill-name">Arduino</div>
+        <div class="skill-tag">Embedded Systems</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-width="0.90"></div></div>
+      </div>
+
+      <div class="skill-card reveal delay-3">
+        <div class="skill-icon">🔥</div>
+        <div class="skill-name">Firebase</div>
+        <div class="skill-tag">Backend Services</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-width="0.88"></div></div>
+      </div>
+
+      <div class="skill-card reveal delay-4">
+        <div class="skill-icon">🌐</div>
+        <div class="skill-name">Laravel</div>
+        <div class="skill-tag">Backend Development</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-width="0.86"></div></div>
+      </div>
+
+      <div class="skill-card reveal delay-1">
+        <div class="skill-icon">🎨</div>
+        <div class="skill-name">React</div>
+        <div class="skill-tag">Frontend Development</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-width="0.84"></div></div>
+      </div>
+
+      <div class="skill-card reveal delay-2">
+        <div class="skill-icon">🗄️</div>
+        <div class="skill-name">SQLite / MySQL</div>
+        <div class="skill-tag">Database Systems</div>
+        <div class="skill-bar-wrap"><div class="skill-bar" data-width="0.82"></div></div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+
+  <div class="section-inner">
+
+    <div class="reveal">
+
+      <div class="section-label">Team Composition</div>
+
+      <h2 class="section-title">Meet The Team</h2>
+
+      <p class="section-sub">
+        A multidisciplinary group of developers, researchers, and innovators working together to develop impactful and research-driven technology solutions.
+      </p>
+
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- MEMBER 1 -->
+      <div class="project-card reveal delay-1">
+
+        <div class="team-image-wrap">
+          <img 
+            src="images/nonito.jpg"
+            alt="Engr. Nonito L. Molijon Jr."
+            class="team-image"
+          />
+        </div>
+
+        <div class="project-body">
+
+          <h3 class="project-title">
+            Engr. Nonito L. Molijon Jr.
+          </h3>
+
+          <p class="project-desc">
+            Team Leader / Project Owner responsible for overall leadership, project direction, system planning, and research supervision.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- MEMBER 2 -->
+      <div class="project-card reveal delay-2">
+
+        <div class="team-image-wrap">
+          <img 
+            src="images/ken.jpg"
+            alt="Ken Chester Felongco"
+            class="team-image"
+          />
+        </div>
+
+        <div class="project-body">
+
+          <h3 class="project-title">
+            Ken Chester Felongco
+          </h3>
+
+          <p class="project-desc">
+            IT Leader / Mobile Application Developer specializing in Flutter-based application development and scalable mobile systems.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- MEMBER 3 -->
+      <div class="project-card reveal delay-3">
+
+        <div class="team-image-wrap">
+          <img 
+            src="images/ronnel.jpg"
+            alt="Ronnel Labata"
+            class="team-image"
+          />
+        </div>
+
+        <div class="project-body">
+
+          <h3 class="project-title">
+            Ronnel Labata
+          </h3>
+
+          <p class="project-desc">
+            Hardware Developer / Arduino Specialist focused on embedded systems, sensors, hardware integration, and automation technologies.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- MEMBER 4 -->
+      <div class="project-card reveal delay-4">
+
+        <div class="team-image-wrap">
+          <img 
+            src="images/jannlemor.jpg"
+            alt="JannLemor Malakad"
+            class="team-image"
+          />
+        </div>
+
+        <div class="project-body">
+
+          <h3 class="project-title">
+            JannLemor Malakad
+          </h3>
+
+          <p class="project-desc">
+            Web Developer specializing in Laravel backend systems, APIs, database management, and web technologies.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- MEMBER 5 -->
+      <div class="project-card reveal delay-1">
+
+        <div class="team-image-wrap">
+          <img 
+            src="images/madel.png"
+            alt="Madel Yesha Ago"
+            class="team-image"
+          />
+        </div>
+
+        <div class="project-body">
+
+          <h3 class="project-title">
+            Madel Yesha Ago
+          </h3>
+
+          <p class="project-desc">
+            Frontend Developer focused on React-based UI/UX design, responsive interfaces, and modern frontend technologies.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- MEMBER 6 -->
+      <div class="project-card reveal delay-2">
+
+        <div class="team-image-wrap">
+          <img 
+            src="images/junelyn.jpg"
+            alt="Junelyn Bertudazo"
+            class="team-image"
+          />
+        </div>
+
+        <div class="project-body">
+
+          <h3 class="project-title">
+            Junelyn Bertudazo
+          </h3>
+
+          <p class="project-desc">
+            Financial Manager responsible for budgeting, financial planning, project resource allocation, and organizational support.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+
+  <div class="section-inner">
+
+    <div class="reveal">
+
+      <div class="section-label">Projects</div>
+
+      <h2 class="section-title">Featured Systems</h2>
+
+      <p class="section-sub">
+        Innovative academic and technology-driven systems developed by AC: Apex of the Champions.
+      </p>
+
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- PROJECT 1 -->
+      <div class="project-card p1 reveal delay-1">
+
+        <!-- PROJECT IMAGE -->
+        <div class="featured-image-wrap">
+
+          <img 
+            src="images/barcode-system.png"
+            alt="Arduino Barcode Scanner with Facial Recognition"
+            class="featured-image"
+          />
+
+          <div class="featured-overlay">
+            <span class="featured-badge">
+              Embedded System
+            </span>
+          </div>
+
+        </div>
+
+        <div class="project-body">
+
+          <h3 class="project-title">
+            Arduino-Based Barcode Scanner with Facial Recognition System
+          </h3>
+
+          <p class="project-desc">
+            A hybrid hardware-software system integrating barcode scanning technology with biometric facial recognition for intelligent identification and monitoring.
+          </p>
+
+          <div class="project-tech">
+            <span class="tech-pill">Arduino</span>
+            <span class="tech-pill">Embedded Systems</span>
+            <span class="tech-pill">Facial Recognition</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECT 2 -->
+      <div class="project-card p2 reveal delay-2">
+
+        <div class="featured-image-wrap">
+
+          <img 
+            src="images/asd-learning-app.jpg"
+            alt="ASD Learning Application"
+            class="featured-image"
+          />
+
+          <div class="featured-overlay">
+            <span class="featured-badge">
+              Education App
+            </span>
+          </div>
+
+        </div>
+
+        <div class="project-body">
+
+          <h3 class="project-title">
+            Autism Spectrum Disorder (ASD) Learning Application
+          </h3>
+
+          <p class="project-desc">
+            A supportive educational mobile application designed to assist learners with Autism Spectrum Disorder through interactive and engaging learning modules.
+          </p>
+
+          <div class="project-tech">
+            <span class="tech-pill">Flutter</span>
+            <span class="tech-pill">Firebase</span>
+            <span class="tech-pill">Gamified Learning</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="project-card p3 reveal delay-3">
+
+        <div class="featured-image-wrap">
+
+          <img 
+            src="images/cpp-learning-app.jpg"
+            alt="C++ Mobile Learning Application"
+            class="featured-image"
+          />
+
+          <div class="featured-overlay">
+            <span class="featured-badge">
+              Mobile Learning
+            </span>
+          </div>
+
+        </div>
+
+        <div class="project-body">
+
+          <h3 class="project-title">
+            Mobile Learning Application for C++ Programming Language
+          </h3>
+
+          <p class="project-desc">
+            A gamified mobile learning platform that teaches C++ programming through lessons, quizzes, coding challenges, and interactive educational activities.
+          </p>
+
+          <div class="project-tech">
+            <span class="tech-pill">Flutter</span>
+            <span class="tech-pill">SQLite</span>
+            <span class="tech-pill">Education Technology</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECT 4 -->
+      <div class="project-card p4 reveal delay-4">
+
+        <div class="featured-image-wrap">
+
+          <img 
+            src="images/genspe-game.jpg"
+            alt="GenSpe Mobile Game Application"
+            class="featured-image"
+          />
+
+          <div class="featured-overlay">
+            <span class="featured-badge">
+              Game Application
+            </span>
+          </div>
+
+        </div>
+
+        <div class="project-body">
+
+          <h3 class="project-title">
+            GenSpe: General Specialization Mobile Game Application
+          </h3>
+
+          <p class="project-desc">
+            A game-based learning application designed to help students explore and master different academic specializations through interactive gameplay and engaging educational challenges.
+          </p>
+
+          <div class="project-tech">
+            <span class="tech-pill">Flutter</span>
+            <span class="tech-pill">Game Development</span>
+            <span class="tech-pill">Interactive Learning</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- IMAGE MODAL -->
+<div class="image-modal" id="imageModal">
+
+  <span class="modal-close" id="modalClose">
+    ✕
+  </span>
+
+  <img src="" alt="Preview" id="modalImage" />
+
+</div>
+
+<!-- ACHIEVEMENTS -->
+<section id="experience">
+
+  <div class="section-inner">
+
+    <div class="reveal">
+
+      <div class="section-label">Achievements</div>
+
+      <h2 class="section-title">Recognition & Awards</h2>
+
+      <p class="section-sub">
+        Recognition earned through innovation, collaborative research, and technology development excellence.
+      </p>
+
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-role">Successfully Defended Capstone Thesis</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-role">Most Innovative Product Award</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-role">Customer's Choice Award</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-role">Best Capstone Research Presentation Award</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-role">Outstanding Performance in Software & Embedded Systems Development</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-role">University-Level Innovation Expo Finalist</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+
+  <div class="section-inner">
+
+    <div class="reveal">
+
+      <div class="section-label">Get In Touch</div>
+
+      <h2 class="section-title">
+        Collaborate With<br>
+        The Team
+      </h2>
+
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="reveal-left">
+
+        <h3>Open for Collaborations</h3>
+
+        <p>
+          For collaborations, academic partnerships, technology projects, and research inquiries, feel free to contact AC: Apex of the Champions.
+        </p>
+
+        <div class="contact-links">
+
+          <a href="mailto:apexofchampions@gmail.com" class="contact-link">
+            <div class="contact-icon">✉️</div>
+
+            <div>
+              <div class="contact-link-text">Email</div>
+              <div class="contact-link-val">
+                apexofchampions@gmail.com
+              </div>
+            </div>
+          </a>
+
+          <!-- FACEBOOK -->
+          <a href="https://www.facebook.com/profile.php?id=61587213903017" target="_blank" class="contact-link">
+
+            <div class="contact-icon">
+              📘
+            </div>
+
+            <div>
+              <div class="contact-link-text">
+                Facebook
+              </div>
+
+              <div class="contact-link-val">
+                AC: Apex of Champions
+              </div>
+            </div>
+
+          </a>
+
+          <a href="#" class="contact-link">
+            <div class="contact-icon">📍</div>
+
+            <div>
+              <div class="contact-link-text">Location</div>
+              <div class="contact-link-val">Philippines</div>
+            </div>
+          </a>
+
+          <a href="#" class="contact-link">
+            <div class="contact-icon">🤝</div>
+
+            <div>
+              <div class="contact-link-text">Availability</div>
+              <div class="contact-link-val">
+                Open for Academic & Technology Collaborations
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+
+      
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="footer-inner">
+
+    <div class="footer-logo">
+      AC: Apex of the Champions
+    </div>
+
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#skills">Technologies</a>
+      <a href="#team">Team</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Achievements</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <p class="footer-copy">
+      © 2026 <span>AC: Apex of the Champions</span>. All rights reserved.
+    </p>
+
+  </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
