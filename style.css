@@ -99,10 +99,18 @@ nav.scrolled {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+.nav-logo img {
+  width: 50px;   /* adjust size */
+  height: 50px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid var(--border2);
+}
 .nav-links {
   display: flex;
   gap: 36px;
   list-style: none;
+  
 }
 .nav-links a {
   font-size: 0.85rem;
@@ -1164,7 +1172,12 @@ textarea.form-input { resize: vertical; min-height: 140px; }
   transform: translateY(-3px);
   box-shadow: 0 16px 40px rgba(0,212,255,0.3);
 }
-
+.verse {
+  font-size: 0.75rem;
+  margin-top: 5px;
+  color: rgb(255, 255, 255);
+  font-style: italic;
+}
 /* =========== FOOTER =========== */
 footer {
   background: var(--bg);
@@ -1295,3 +1308,11 @@ footer {
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .about-stats { grid-template-columns: repeat(3, 1fr); }
 }
+
+
+.contact-icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
