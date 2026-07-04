@@ -4,7 +4,21 @@ const imageModal = document.getElementById('imageModal');
 const modalImage = document.getElementById('modalImage');
 const modalClose = document.getElementById('modalClose');
 
+<<<<<<< HEAD
 // Project cards now open a details modal on click.
+=======
+// OPEN MODAL
+featuredImages.forEach(img => {
+
+  img.addEventListener('mouseenter', () => {
+
+    modalImage.src = img.src;
+    imageModal.classList.add('active');
+
+  });
+
+});
+>>>>>>> 952ed016629acf92ea33fa58b716af3ab9dc57e3
 
 // CLOSE BUTTON
 modalClose.addEventListener('click', () => {
@@ -35,6 +49,7 @@ document.addEventListener('keydown', (e) => {
 
 });
 
+<<<<<<< HEAD
 // ========== TEAM DETAILS MODAL ==========
 const teamModal = document.getElementById('teamModal');
 const teamModalClose = document.getElementById('teamModalClose');
@@ -226,6 +241,8 @@ if (locationMapOpen && locationMapModal) {
   });
 }
 
+=======
+>>>>>>> 952ed016629acf92ea33fa58b716af3ab9dc57e3
   
 // =========== CURSOR ===========
 const cursor = document.getElementById('cursor');
@@ -333,3 +350,7 @@ window.addEventListener('scroll', () => {
     l.style.color = l.getAttribute('href') === '#' + current ? 'var(--text)' : '';
   });
 });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 952ed016629acf92ea33fa58b716af3ab9dc57e3
