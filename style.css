@@ -337,33 +337,21 @@ section { position: relative; z-index: 1; }
   background: linear-gradient(180deg, #0d1b2e 0%, #0a1422 100%);
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
   padding: 54px 18px 18px;
   gap: 8px;
   overflow:hidden;
 }
 .app-bar {
   height: 44px;
-=======
-  padding: 56px 20px 20px;
-  gap: 12px;
-}
-.app-bar {
-  height: 48px;
->>>>>>> 952ed016629acf92ea33fa58b716af3ab9dc57e3
   background: var(--surface2);
   border-radius: 12px;
   display: flex;
   align-items: center;
-<<<<<<< HEAD
   justify-content: space-between;
-=======
->>>>>>> 952ed016629acf92ea33fa58b716af3ab9dc57e3
   padding: 0 14px;
   gap: 8px;
 }
 .app-bar-dot { width: 8px; height: 8px; border-radius: 50%; }
-<<<<<<< HEAD
 .dashboard-topbar{
   position:relative;
   overflow:hidden;
@@ -553,8 +541,6 @@ section { position: relative; z-index: 1; }
   overflow:hidden;
   text-overflow:ellipsis;
 }
-=======
->>>>>>> 952ed016629acf92ea33fa58b716af3ab9dc57e3
 .app-card {
   border-radius: 12px;
   padding: 14px;
@@ -568,7 +554,6 @@ section { position: relative; z-index: 1; }
   border-radius: 4px;
   background: rgba(255,255,255,0.08);
 }
-<<<<<<< HEAD
 @keyframes dashboardSweep {
   0%, 45% { transform:translateX(-120%); }
   75%, 100% { transform:translateX(120%); }
@@ -581,8 +566,6 @@ section { position: relative; z-index: 1; }
   0%, 100% { transform:translateY(0); opacity:0.82; }
   50% { transform:translateY(-3px); opacity:1; }
 }
-=======
->>>>>>> 952ed016629acf92ea33fa58b716af3ab9dc57e3
 .phone-glow {
   position: absolute;
   inset: -40px;
@@ -729,7 +712,6 @@ section { position: relative; z-index: 1; }
   transform:scale(1.05);
 }
 
-<<<<<<< HEAD
 #team .project-card{
   cursor:pointer;
 }
@@ -962,8 +944,6 @@ body.modal-open{
 
 }
 
-=======
->>>>>>> 952ed016629acf92ea33fa58b716af3ab9dc57e3
 /* FEATURED SYSTEM IMAGES */
 
 .featured-image-wrap{
@@ -1132,7 +1112,6 @@ body.modal-open{
 }
 
 /* =========== ABOUT =========== */
-<<<<<<< HEAD
 #about {
   position: relative;
   overflow: hidden;
@@ -1173,16 +1152,12 @@ body.modal-open{
   position: relative;
   z-index: 1;
 }
-=======
-#about { background: var(--bg2); }
->>>>>>> 952ed016629acf92ea33fa58b716af3ab9dc57e3
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
 }
-<<<<<<< HEAD
 .about-grid::before {
   content: '';
   position: absolute;
@@ -1331,42 +1306,10 @@ body.modal-open{
   letter-spacing: 0.1em;
   color: #ffffff;
   text-align: center;
-=======
-.about-visual {
-  position: relative;
-}
-.about-photo-container {
-  position: relative;
-  width: 320px;
-  aspect-ratio: 3/4;
-  margin: 0 auto;
-}
-.about-photo {
-  width: 100%;
-  height: 100%;
-  border-radius: var(--radius2);
-  background: var(--surface);
-  border: 1px solid var(--border2);
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.photo-placeholder {
-  font-family: var(--font-head);
-  font-size: 5rem;
-  font-weight: 800;
-  background: var(--grad);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
->>>>>>> 952ed016629acf92ea33fa58b716af3ab9dc57e3
 }
 .about-photo::before {
   content: '';
   position: absolute;
-<<<<<<< HEAD
   inset: 22px;
   background:
     linear-gradient(var(--accent), var(--accent)) left top / 42px 2px no-repeat,
@@ -1639,44 +1582,6 @@ body.modal-open{
   .solution-orbit-2 {
     animation: none !important;
   }
-=======
-  inset: 0;
-  background: linear-gradient(135deg, rgba(0,212,255,0.05), rgba(123,79,255,0.05));
-}
-.about-badge {
-  position: absolute;
-  bottom: -16px; right: -16px;
-  background: var(--grad);
-  border-radius: 14px;
-  padding: 14px 18px;
-  text-align: center;
-  box-shadow: 0 16px 40px rgba(0,212,255,0.3);
-}
-.about-badge .num {
-  font-family: var(--font-head);
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #000;
-  line-height: 1;
-}
-.about-badge .lbl {
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: rgba(0,0,0,0.7);
-  letter-spacing: 0.04em;
-}
-.about-corner {
-  position: absolute;
-  top: -16px; left: -16px;
-  width: 50px; height: 50px;
-  border-radius: 12px;
-  background: var(--surface2);
-  border: 1px solid var(--border2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
->>>>>>> 952ed016629acf92ea33fa58b716af3ab9dc57e3
 }
 .about-content p {
   color: var(--text2);
@@ -2210,7 +2115,6 @@ footer {
   .hero-inner { grid-template-columns: 1fr; gap: 60px; }
   .hero-visual { order: -1; }
   .phone-mockup { width: 200px; height: 380px; }
-<<<<<<< HEAD
   .phone-screen { padding: 48px 14px 14px; gap: 6px; }
   .app-bar { height: 38px; padding-inline: 11px; }
   .dashboard-hero { padding: 8px 9px; }
@@ -2229,15 +2133,12 @@ footer {
   .dashboard-status { font-size: 0.5rem; }
   .dashboard-team span { width: 18px; height: 18px; }
   .dashboard-feed { gap: 5px; padding-block: 7px; }
-=======
->>>>>>> 952ed016629acf92ea33fa58b716af3ab9dc57e3
   .orbit-1 { width: 280px; height: 280px; }
   .orbit-2 { width: 360px; height: 360px; }
 
   .section-inner { padding: 80px 24px; }
 
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
-<<<<<<< HEAD
   .about-visual { min-height: 480px; }
   .solution-panel { width: min(100%, 440px); }
   .solution-panel::after {
@@ -2252,9 +2153,6 @@ footer {
     left: -36px;
     width: 205px;
   }
-=======
-  .about-photo-container { width: 260px; }
->>>>>>> 952ed016629acf92ea33fa58b716af3ab9dc57e3
 
   .projects-grid { grid-template-columns: 1fr; }
 
@@ -2269,7 +2167,6 @@ footer {
   .btn-primary, .btn-secondary { justify-content: center; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .about-stats { grid-template-columns: repeat(3, 1fr); }
-<<<<<<< HEAD
   .about-visual { min-height: 390px; }
   .solution-panel { width: min(100%, 320px); }
   .about-photo { width: 70%; }
@@ -2316,8 +2213,6 @@ footer {
     font-size: 0.56rem;
     line-height: 1.55;
   }
-=======
->>>>>>> 952ed016629acf92ea33fa58b716af3ab9dc57e3
 }
 
 
@@ -2326,7 +2221,3 @@ footer {
   height: 24px;
   object-fit: contain;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 952ed016629acf92ea33fa58b716af3ab9dc57e3
