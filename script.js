@@ -39,6 +39,7 @@ document.addEventListener('keydown', (e) => {
 const teamModal = document.getElementById('teamModal');
 const teamModalClose = document.getElementById('teamModalClose');
 const teamModalImage = document.getElementById('teamModalImage');
+const teamModalLabel = document.getElementById('teamModalLabel');
 const teamModalName = document.getElementById('teamModalName');
 const teamModalRole = document.getElementById('teamModalRole');
 const teamModalTags = document.getElementById('teamModalTags');
@@ -55,6 +56,7 @@ function openTeamModal(card) {
 
   teamModalImage.src = image ? image.src : '';
   teamModalImage.alt = image ? image.alt : '';
+  teamModalLabel.textContent = card.dataset.teamRole || 'Team Member';
   teamModalName.textContent = name ? name.textContent.trim() : 'Team Member';
   teamModalRole.textContent = role ? role.textContent.trim() : '';
   teamModalWork.textContent = customWork ? customWork.textContent.trim() : defaultTeamWork;
