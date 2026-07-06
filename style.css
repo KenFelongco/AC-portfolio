@@ -1115,38 +1115,20 @@ body.modal-open{
 #about {
   position: relative;
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(4,9,14,0.98) 0%, rgba(9,21,32,0.98) 44%, rgba(5,11,18,0.98) 100%),
-    var(--bg2);
+  background: transparent;
 }
 #about::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(rgba(0,212,255,0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,212,255,0.08) 1px, transparent 1px),
-    linear-gradient(115deg, transparent 0 18%, rgba(0,212,255,0.12) 18.1% 18.25%, transparent 18.35% 100%),
-    linear-gradient(65deg, transparent 0 72%, rgba(123,79,255,0.1) 72.1% 72.25%, transparent 72.35% 100%);
-  background-size: 72px 72px, 72px 72px, 100% 100%, 100% 100%;
-  mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 86%, transparent 100%);
-  opacity: 0.8;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(0,212,255,0.07), transparent 48%),
+    radial-gradient(circle at 86% 34%, rgba(123,79,255,0.05), transparent 34%);
+  opacity: 0.75;
   pointer-events: none;
-  animation: aboutGridLive 22s linear infinite;
 }
 #about::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, transparent 0 6%, rgba(255,255,255,0.08) 6% 6.08%, transparent 6.08% 100%),
-    linear-gradient(90deg, transparent 0 48%, rgba(0,212,255,0.12) 48% 48.14%, transparent 48.14% 100%),
-    linear-gradient(180deg, transparent 0 22%, rgba(0,212,255,0.09) 22% 22.18%, transparent 22.18% 100%),
-    linear-gradient(180deg, transparent 0 77%, rgba(255,255,255,0.07) 77% 77.12%, transparent 77.12% 100%),
-    linear-gradient(135deg, rgba(0,212,255,0.08), transparent 28%, rgba(123,79,255,0.06) 70%, transparent 100%);
-  opacity: 0.65;
-  pointer-events: none;
-  animation: aboutScanLive 8s ease-in-out infinite alternate;
+  content: none;
 }
 #about .section-inner {
   position: relative;
@@ -1159,15 +1141,7 @@ body.modal-open{
   align-items: center;
 }
 .about-grid::before {
-  content: '';
-  position: absolute;
-  left: 40px;
-  right: 40px;
-  top: 100px;
-  bottom: 100px;
-  border-top: 1px solid rgba(0,212,255,0.12);
-  border-bottom: 1px solid rgba(0,212,255,0.08);
-  pointer-events: none;
+  content: none;
 }
 .about-visual {
   position: relative;
@@ -1186,10 +1160,8 @@ body.modal-open{
   background-image:
     radial-gradient(circle at center, transparent 0 38%, rgba(0,212,255,0.32) 38.2% 38.5%, transparent 38.8%),
     radial-gradient(circle at center, transparent 0 53%, rgba(0,151,255,0.22) 53.2% 53.5%, transparent 53.8%),
-    radial-gradient(circle at center, transparent 0 68%, rgba(0,212,255,0.14) 68.2% 68.4%, transparent 68.8%),
-    linear-gradient(rgba(0,212,255,0.22) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,212,255,0.18) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    radial-gradient(circle at center, transparent 0 68%, rgba(0,212,255,0.14) 68.2% 68.4%, transparent 68.8%);
+  background-size: 100% 100%, 100% 100%, 100% 100%;
   animation: solutionPanelLive 16s linear infinite;
   will-change: background-position;
 }
@@ -1198,8 +1170,6 @@ body.modal-open{
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, transparent 0 8%, rgba(255,255,255,0.55) 8% 8.2%, transparent 8.2% 100%),
-    linear-gradient(180deg, transparent 0 51%, rgba(255,255,255,0.55) 51% 51.2%, transparent 51.2% 100%),
     radial-gradient(circle at 88% 7%, rgba(0,212,255,0.18), transparent 10%),
     radial-gradient(circle at 40% 42%, rgba(0,212,255,0.22), transparent 28%);
   opacity: 0.5;
@@ -1240,10 +1210,8 @@ body.modal-open{
   border-radius: 4px;
   background:
     radial-gradient(circle at center, rgba(0,212,255,0.16), rgba(0,212,255,0.05) 34%, transparent 57%),
-    linear-gradient(rgba(0,212,255,0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,212,255,0.08) 1px, transparent 1px),
     linear-gradient(180deg, rgba(9,40,62,0.96), rgba(4,13,26,0.98));
-  background-size: 100% 100%, 38px 38px, 38px 38px, 100% 100%;
+  background-size: 100% 100%, 100% 100%;
   border: 1px solid rgba(0,212,255,0.28);
   overflow: visible;
   display: flex;
@@ -1468,7 +1436,7 @@ body.modal-open{
 }
 @keyframes solutionPanelLive {
   to {
-    background-position: 0 0, 0 0, 0 0, 48px 48px, -48px 48px;
+    background-position: 0 0, 0 0, 0 0;
   }
 }
 @keyframes solutionSignalLive {
@@ -1484,11 +1452,11 @@ body.modal-open{
 @keyframes solutionCoreLive {
   0%, 100% {
     transform: translate(-50%, -50%) scale(1);
-    background-position: 0 0, 0 0, 0 0, 0 0;
+    background-position: 0 0, 0 0;
   }
   50% {
     transform: translate(-50%, calc(-50% - 4px)) scale(1.015);
-    background-position: 0 0, 19px 19px, -19px 19px, 0 0;
+    background-position: 0 0, 0 0;
   }
 }
 @keyframes logoPulseLive {
