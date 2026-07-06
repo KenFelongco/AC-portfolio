@@ -112,6 +112,7 @@ const projectModal = document.getElementById('projectModal');
 const projectModalClose = document.getElementById('projectModalClose');
 const projectModalImage = document.getElementById('projectModalImage');
 const projectModalTitle = document.getElementById('projectModalTitle');
+const projectFacebookLink = document.getElementById('projectFacebookLink');
 const projectGalleryPrev = document.getElementById('projectGalleryPrev');
 const projectGalleryNext = document.getElementById('projectGalleryNext');
 const projectGalleryThumbs = document.getElementById('projectGalleryThumbs');
@@ -166,9 +167,18 @@ function moveProjectGallery(direction) {
   renderProjectGallery();
 }
 
+function normalizeProjectLink(url) {
+  if (!url) {
+    return '';
+  }
+
+  return /^https?:\/\//i.test(url) ? url : `https://${url}`;
+}
+
 function openProjectModal(card) {
   const image = card.querySelector('.featured-image');
   const title = card.querySelector('.project-title');
+  const facebookUrl = normalizeProjectLink((card.dataset.facebookUrl || '').trim());
   const gallery = card.dataset.gallery
     ? card.dataset.gallery.split(',').map(src => src.trim()).filter(Boolean)
     : [];
@@ -177,6 +187,17 @@ function openProjectModal(card) {
   projectGalleryIndex = 0;
 
   projectModalTitle.textContent = title ? title.textContent.trim() : 'Featured System';
+
+  if (projectFacebookLink) {
+    projectFacebookLink.hidden = !facebookUrl;
+
+    if (facebookUrl) {
+      projectFacebookLink.href = facebookUrl;
+    } else {
+      projectFacebookLink.removeAttribute('href');
+    }
+  }
+
   renderProjectGallery();
 
   projectModal.classList.add('active');
