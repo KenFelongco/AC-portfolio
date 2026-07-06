@@ -824,7 +824,10 @@
     <div class="projects-grid">
 
       <!-- PROJECT 1 -->
-      <div class="project-card p1 reveal delay-1">
+      <div
+        class="project-card p1 reveal delay-1"
+        data-gallery="images/barcode-system-1.png,images/barcode-system-2.png,images/barcode-system-3.png,images/barcode-system-4.png,images/barcode-system-5.png,images/barcode-system-6.png,images/barcode-system-7.png,images/barcode-system-8.png"
+      >
 
         <!-- PROJECT IMAGE -->
         <div class="featured-image-wrap">
@@ -942,7 +945,10 @@
       </div>
 
       <!-- PROJECT 4 -->
-      <div class="project-card p4 reveal delay-4">
+      <div
+        class="project-card p4 reveal delay-4"
+        data-gallery="images/genspe-1.png,images/genspe-2.png,images/genspe-3.png"
+      >
 
         <div class="featured-image-wrap">
 
@@ -1074,31 +1080,30 @@
 <div class="team-modal project-modal" id="projectModal" aria-hidden="true">
   <div class="team-modal-card project-modal-card" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
 
-    <button type="button" class="team-modal-close" id="projectModalClose" aria-label="Close project details">
+    <button type="button" class="team-modal-close" id="projectModalClose" aria-label="Close project preview">
       &times;
     </button>
 
-    <div class="team-modal-image-wrap project-modal-image-wrap">
-      <img src="" alt="" id="projectModalImage" class="team-modal-image project-modal-image">
-    </div>
-
     <div class="team-modal-body project-modal-body">
-
-      <div class="section-label" id="projectModalCategory">Featured System</div>
 
       <h3 class="team-modal-name" id="projectModalTitle"></h3>
 
-      <p class="team-modal-role" id="projectModalDesc"></p>
+    </div>
 
-      <div class="team-modal-tags project-tech" id="projectModalTags"></div>
+    <div class="team-modal-image-wrap project-modal-image-wrap">
+      <div class="project-modal-stage">
+        <button type="button" class="project-gallery-btn project-gallery-prev" id="projectGalleryPrev" aria-label="Previous project image">
+          &lsaquo;
+        </button>
 
-      <div class="team-modal-work">
-        <h4>System Details</h4>
-        <p id="projectModalWork">
-          Add this system's successful features, development process, team contributions, project outcome, and important details here.
-        </p>
+        <img src="" alt="" id="projectModalImage" class="team-modal-image project-modal-image">
+
+        <button type="button" class="project-gallery-btn project-gallery-next" id="projectGalleryNext" aria-label="Next project image">
+          &rsaquo;
+        </button>
       </div>
 
+      <div class="project-gallery-thumbs" id="projectGalleryThumbs" aria-label="Project image thumbnails"></div>
     </div>
 
   </div>

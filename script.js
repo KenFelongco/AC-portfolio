@@ -111,34 +111,73 @@ if (teamModal) {
 const projectModal = document.getElementById('projectModal');
 const projectModalClose = document.getElementById('projectModalClose');
 const projectModalImage = document.getElementById('projectModalImage');
-const projectModalCategory = document.getElementById('projectModalCategory');
 const projectModalTitle = document.getElementById('projectModalTitle');
-const projectModalDesc = document.getElementById('projectModalDesc');
-const projectModalTags = document.getElementById('projectModalTags');
-const projectModalWork = document.getElementById('projectModalWork');
+const projectGalleryPrev = document.getElementById('projectGalleryPrev');
+const projectGalleryNext = document.getElementById('projectGalleryNext');
+const projectGalleryThumbs = document.getElementById('projectGalleryThumbs');
 const projectCards = document.querySelectorAll('#projects .project-card');
-const defaultProjectWork = projectModalWork ? projectModalWork.textContent.trim() : '';
+let projectGalleryImages = [];
+let projectGalleryIndex = 0;
+
+function renderProjectGallery() {
+  const imageSrc = projectGalleryImages[projectGalleryIndex] || '';
+  const title = projectModalTitle.textContent.trim() || 'Project image';
+  const hasMultipleImages = projectGalleryImages.length > 1;
+
+  projectModalImage.src = imageSrc;
+  projectModalImage.alt = `${title} image ${projectGalleryIndex + 1}`;
+
+  projectGalleryPrev.hidden = !hasMultipleImages;
+  projectGalleryNext.hidden = !hasMultipleImages;
+  projectGalleryThumbs.hidden = !hasMultipleImages;
+  projectGalleryThumbs.innerHTML = '';
+
+  if (!hasMultipleImages) {
+    return;
+  }
+
+  projectGalleryImages.forEach((src, index) => {
+    const thumb = document.createElement('button');
+    thumb.type = 'button';
+    thumb.className = `project-gallery-thumb${index === projectGalleryIndex ? ' active' : ''}`;
+    thumb.setAttribute('aria-label', `Show image ${index + 1}`);
+
+    const thumbImage = document.createElement('img');
+    thumbImage.src = src;
+    thumbImage.alt = '';
+    thumbImage.loading = 'lazy';
+
+    thumb.appendChild(thumbImage);
+    thumb.addEventListener('click', () => {
+      projectGalleryIndex = index;
+      renderProjectGallery();
+    });
+
+    projectGalleryThumbs.appendChild(thumb);
+  });
+}
+
+function moveProjectGallery(direction) {
+  if (projectGalleryImages.length <= 1) {
+    return;
+  }
+
+  projectGalleryIndex = (projectGalleryIndex + direction + projectGalleryImages.length) % projectGalleryImages.length;
+  renderProjectGallery();
+}
 
 function openProjectModal(card) {
   const image = card.querySelector('.featured-image');
-  const category = card.querySelector('.featured-badge');
   const title = card.querySelector('.project-title');
-  const desc = card.querySelector('.project-desc');
-  const tags = card.querySelectorAll('.tech-pill');
-  const customWork = card.querySelector('.project-details-content');
+  const gallery = card.dataset.gallery
+    ? card.dataset.gallery.split(',').map(src => src.trim()).filter(Boolean)
+    : [];
 
-  projectModalImage.src = image ? image.src : '';
-  projectModalImage.alt = image ? image.alt : '';
-  projectModalCategory.textContent = category ? category.textContent.trim() : 'Featured System';
+  projectGalleryImages = gallery.length ? gallery : [image ? image.getAttribute('src') : ''].filter(Boolean);
+  projectGalleryIndex = 0;
+
   projectModalTitle.textContent = title ? title.textContent.trim() : 'Featured System';
-  projectModalDesc.textContent = desc ? desc.textContent.trim() : '';
-  projectModalWork.textContent = customWork ? customWork.textContent.trim() : defaultProjectWork;
-
-  projectModalTags.innerHTML = '';
-  tags.forEach(tag => {
-    const clonedTag = tag.cloneNode(true);
-    projectModalTags.appendChild(clonedTag);
-  });
+  renderProjectGallery();
 
   projectModal.classList.add('active');
   projectModal.setAttribute('aria-hidden', 'false');
@@ -167,6 +206,9 @@ if (projectModal) {
 
   projectModalClose.addEventListener('click', closeProjectModal);
 
+  projectGalleryPrev.addEventListener('click', () => moveProjectGallery(-1));
+  projectGalleryNext.addEventListener('click', () => moveProjectGallery(1));
+
   projectModal.addEventListener('click', e => {
     if (e.target === projectModal) {
       closeProjectModal();
@@ -176,6 +218,14 @@ if (projectModal) {
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && projectModal.classList.contains('active')) {
       closeProjectModal();
+    }
+
+    if (e.key === 'ArrowLeft' && projectModal.classList.contains('active')) {
+      moveProjectGallery(-1);
+    }
+
+    if (e.key === 'ArrowRight' && projectModal.classList.contains('active')) {
+      moveProjectGallery(1);
     }
   });
 }
