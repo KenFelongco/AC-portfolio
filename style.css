@@ -1918,6 +1918,10 @@ body.modal-open{
   justify-content: center;
   font-size: 1.1rem;
   flex-shrink: 0;
+  color: var(--accent);
+}
+.contact-icon svg {
+  display: block;
 }
 .contact-link-text {
   font-size: 0.82rem;
