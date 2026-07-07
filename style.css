@@ -2368,7 +2368,7 @@ textarea.form-input { resize: vertical; min-height: 140px; }
 .verse {
   font-size: 0.75rem;
   margin-top: 5px;
-  color: rgb(255, 255, 255);
+  color: #d7e2ea;
   font-style: italic;
 }
 /* =========== FOOTER =========== */
@@ -2385,13 +2385,15 @@ footer {
   font-family: var(--font-head);
   font-size: 1.2rem;
   font-weight: 800;
-  color: #fff;
+  color: #f4f8fb;
   margin-bottom: 16px;
 }
 .footer-brand,
 .footer-reg {
   display: block;
-  color: #fff;
+}
+.footer-brand {
+  color: #f4f8fb;
 }
 .footer-reg {
   margin-top: 6px;
@@ -2399,6 +2401,7 @@ footer {
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.04em;
+  color: #7ddff2;
 }
 .footer-links {
   display: flex;
@@ -2409,15 +2412,15 @@ footer {
 }
 .footer-links a {
   font-size: 0.85rem;
-  color: var(--text3);
+  color: #86a9c7;
   transition: color var(--transition);
 }
-.footer-links a:hover { color: var(--accent); }
+.footer-links a:hover { color: #00c8e8; }
 .footer-copy {
   font-size: 0.82rem;
-  color: var(--text3);
+  color: #86a9c7;
 }
-.footer-copy span { color: #fff; }
+.footer-copy span { color: #f4f8fb; }
 
 /* =========== ANIMATIONS =========== */
 @keyframes fadeInUp {
