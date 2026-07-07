@@ -43,23 +43,99 @@ const teamModalLabel = document.getElementById('teamModalLabel');
 const teamModalName = document.getElementById('teamModalName');
 const teamModalRole = document.getElementById('teamModalRole');
 const teamModalTags = document.getElementById('teamModalTags');
-const teamModalWork = document.getElementById('teamModalWork');
+const teamModalProjects = document.getElementById('teamModalProjects');
 const teamCards = document.querySelectorAll('#team .project-card');
-const defaultTeamWork = teamModalWork ? teamModalWork.textContent.trim() : '';
+const memberProjects = {
+  ken: [
+    {
+      title: 'Autism Spectrum Disorder (ASD) Learning Application',
+      slug: 'asd-learning-application'
+    },
+    {
+      title: 'Wedding Invitation Website',
+      slug: 'wedding-invitation-website'
+    }
+  ],
+  ronnel: [
+    {
+      title: 'GenSpe: General Specialization Mobile Game Application',
+      slug: 'genspe-mobile-game'
+    },
+    {
+      title: 'Speak-App: Communication Learning Mobile Application for ASD Students',
+      slug: 'speak-app'
+    }
+  ],
+  lemor: [
+    {
+      title: 'IGLA: Interactive Game Learning Application for ADHD Students',
+      slug: 'igla-adhd-learning-app'
+    }
+  ],
+  madel: [
+    {
+      title: 'Birthday Invitation Website',
+      slug: 'birthday-invitation-website'
+    }
+  ]
+};
+
+function openMemberProject(projectSlug) {
+  const targetProject = document.querySelector(`#projects .project-card[data-project-slug="${projectSlug}"]`);
+
+  if (!targetProject) {
+    return;
+  }
+
+  closeTeamModal();
+  targetProject.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  targetProject.classList.add('project-card-focus');
+
+  window.setTimeout(() => {
+    targetProject.classList.remove('project-card-focus');
+    openProjectModal(targetProject);
+  }, 420);
+}
+
+function renderTeamProjects(memberKey) {
+  const projects = memberProjects[memberKey] || [];
+
+  if (!teamModalProjects) {
+    return;
+  }
+
+  teamModalProjects.innerHTML = '';
+
+  if (!projects.length) {
+    const emptyState = document.createElement('p');
+    emptyState.className = 'team-modal-project-empty';
+    emptyState.textContent = 'No projects listed yet.';
+    teamModalProjects.appendChild(emptyState);
+    return;
+  }
+
+  projects.forEach(project => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'team-modal-project-btn';
+    button.textContent = project.title;
+    button.addEventListener('click', () => openMemberProject(project.slug));
+    teamModalProjects.appendChild(button);
+  });
+}
 
 function openTeamModal(card) {
   const image = card.querySelector('.team-image');
   const name = card.querySelector('.project-title');
   const role = card.querySelector('.project-desc');
   const tags = card.querySelectorAll('.tech-pill');
-  const customWork = card.querySelector('.team-member-work');
 
   teamModalImage.src = image ? image.src : '';
   teamModalImage.alt = image ? image.alt : '';
   teamModalLabel.textContent = card.dataset.teamRole || 'Team Member';
   teamModalName.textContent = name ? name.textContent.trim() : 'Team Member';
   teamModalRole.textContent = role ? role.textContent.trim() : '';
-  teamModalWork.textContent = customWork ? customWork.textContent.trim() : defaultTeamWork;
+  renderTeamProjects(card.dataset.memberKey || '');
 
   teamModalTags.innerHTML = '';
   tags.forEach(tag => {
