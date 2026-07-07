@@ -48,6 +48,10 @@ const teamCards = document.querySelectorAll('#team .project-card');
 const memberProjects = {
   ken: [
     {
+      title: 'Arduino-Based Barcode Scanner with Facial Recognition System',
+      slug: 'arduino-barcode-facial-recognition'
+    },
+    {
       title: 'Autism Spectrum Disorder (ASD) Learning Application',
       slug: 'asd-learning-application'
     },
@@ -188,6 +192,7 @@ const projectModal = document.getElementById('projectModal');
 const projectModalClose = document.getElementById('projectModalClose');
 const projectModalImage = document.getElementById('projectModalImage');
 const projectModalTitle = document.getElementById('projectModalTitle');
+const projectModalLead = document.getElementById('projectModalLead');
 const projectFacebookLink = document.getElementById('projectFacebookLink');
 const projectGalleryPrev = document.getElementById('projectGalleryPrev');
 const projectGalleryNext = document.getElementById('projectGalleryNext');
@@ -254,6 +259,7 @@ function normalizeProjectLink(url) {
 function openProjectModal(card) {
   const image = card.querySelector('.featured-image');
   const title = card.querySelector('.project-title');
+  const projectLead = (card.dataset.projectLead || '').trim();
   const facebookUrl = normalizeProjectLink((card.dataset.facebookUrl || '').trim());
   const gallery = card.dataset.gallery
     ? card.dataset.gallery.split(',').map(src => src.trim()).filter(Boolean)
@@ -263,6 +269,11 @@ function openProjectModal(card) {
   projectGalleryIndex = 0;
 
   projectModalTitle.textContent = title ? title.textContent.trim() : 'Featured System';
+
+  if (projectModalLead) {
+    projectModalLead.hidden = !projectLead;
+    projectModalLead.textContent = projectLead ? `Lead by ${projectLead}` : '';
+  }
 
   if (projectFacebookLink) {
     projectFacebookLink.hidden = !facebookUrl;
