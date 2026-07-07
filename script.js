@@ -386,6 +386,58 @@ if (locationMapOpen && locationMapModal) {
   });
 }
 
+// ========== ACHIEVEMENT PROOF MODAL ==========
+const achievementProofModal = document.getElementById('achievementProofModal');
+const achievementProofClose = document.getElementById('achievementProofClose');
+const achievementProofTitle = document.getElementById('achievementProofTitle');
+const achievementProofType = document.getElementById('achievementProofType');
+const achievementProofDetail = document.getElementById('achievementProofDetail');
+const achievementCards = document.querySelectorAll('.achievement-card');
+
+function openAchievementProof(card) {
+  const proofTitle = card.dataset.proofTitle || 'Achievement Proof';
+  const proofType = card.dataset.proofType || 'Certificate / Proof';
+  const proofDetail = card.dataset.proofDetail || 'Certificate, academic record, event documentation, or other proof can be attached for this achievement.';
+
+  achievementProofTitle.textContent = proofTitle;
+  achievementProofType.textContent = proofType;
+  achievementProofDetail.textContent = proofDetail;
+
+  achievementProofModal.classList.add('active');
+  achievementProofModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+}
+
+function closeAchievementProof() {
+  achievementProofModal.classList.remove('active');
+  achievementProofModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+}
+
+if (achievementProofModal) {
+  achievementCards.forEach(card => {
+    const proofButton = card.querySelector('.achievement-proof-btn');
+
+    if (proofButton) {
+      proofButton.addEventListener('click', () => openAchievementProof(card));
+    }
+  });
+
+  achievementProofClose.addEventListener('click', closeAchievementProof);
+
+  achievementProofModal.addEventListener('click', e => {
+    if (e.target === achievementProofModal) {
+      closeAchievementProof();
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && achievementProofModal.classList.contains('active')) {
+      closeAchievementProof();
+    }
+  });
+}
+
 // =========== CURSOR ===========
 const cursor = document.getElementById('cursor');
 const cursorRing = document.getElementById('cursorRing');
