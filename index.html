@@ -34,9 +34,15 @@
 <!-- NAV -->
 <nav id="navbar">
 
-  <div class="nav-logo">
-  <img src="images/logo.jpg" alt="AC Logo">
-  </div>
+  <button
+    type="button"
+    class="nav-logo"
+    id="businessSummaryOpen"
+    aria-haspopup="dialog"
+    aria-controls="businessSummaryModal"
+    aria-label="Read about AC: Apex of the Champions">
+    <img src="images/logo.jpg" alt="AC Logo">
+  </button>
 
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
@@ -54,6 +60,89 @@
   </div>
 
 </nav>
+
+<!-- BUSINESS SUMMARY MODAL -->
+<div class="team-modal business-modal" id="businessSummaryModal" aria-hidden="true">
+  <div class="team-modal-card business-modal-card" role="dialog" aria-modal="true" aria-labelledby="businessSummaryTitle">
+
+    <button type="button" class="team-modal-close" id="businessSummaryClose" aria-label="Close business summary">
+      &times;
+    </button>
+
+    <div class="business-modal-hero">
+      <div class="business-logo-orbit">
+        <img src="images/logo.jpg" alt="AC: Apex of the Champions logo">
+      </div>
+
+      <div>
+        <div class="section-label">Business Summary</div>
+
+        <h3 class="team-modal-name" id="businessSummaryTitle">
+          AC: Apex of the Champions
+        </h3>
+
+        <p>
+          AC: Apex of the Champions helps clients turn ideas into useful digital solutions through web systems, mobile applications, embedded projects, UI/UX design, graphics, documentation, and technology support.
+        </p>
+      </div>
+    </div>
+
+    <div class="team-modal-body business-modal-body">
+
+      <div class="business-summary-grid">
+        <div class="business-summary-card">
+          <span>AC</span>
+          <h4>Flexible Like Alternating Current</h4>
+          <p>
+            AC is inspired by Alternating Current. As a business, it represents flexibility, adaptability, and the ability to move through multiple paths and solutions. Unlike a single-direction approach, the team can adjust to different client needs, project types, and creative challenges.
+          </p>
+        </div>
+
+        <div class="business-summary-card">
+          <span>Apex</span>
+          <h4>Reaching The Highest Peak</h4>
+          <p>
+            Apex means the highest point. The team aims to keep improving, learning, and building stronger systems so every project can rise toward its best possible version.
+          </p>
+        </div>
+
+        <div class="business-summary-card">
+          <span>Champions</span>
+          <h4>Learning To Become Better</h4>
+          <p>
+            Champions are people who continue to learn, practice, and grow. AC carries that mindset into every project by combining teamwork, research, creativity, and commitment.
+          </p>
+        </div>
+      </div>
+
+      <div class="business-help-panel">
+        <div>
+          <h4>How AC Helps Clients</h4>
+          <p>
+            AC supports clients who need help organizing an idea, designing a professional interface, building a working system, improving a digital product, or preparing a project for presentation, launch, or commission work.
+          </p>
+        </div>
+
+        <ul>
+          <li>Clarifies project goals, features, and user needs.</li>
+          <li>Designs clean UI/UX flows, prototypes, branding, and graphics.</li>
+          <li>Develops web, mobile, embedded, and academic technology systems.</li>
+          <li>Creates polished digital experiences such as portfolios, invitations, dashboards, and learning apps.</li>
+        </ul>
+      </div>
+
+      <div class="business-summary-quote">
+        AC is built to be flexible in approach, high in ambition, and champion-minded in growth.
+      </div>
+
+      <a href="#contact" class="business-contact-link" id="businessSummaryContact">
+        Work With AC
+      </a>
+
+    </div>
+
+  </div>
+</div>
 
 <!-- HERO -->
 <section id="hero">

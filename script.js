@@ -323,7 +323,7 @@ if (projectModal) {
     }
   });
 
-  document.addEventListener('keydown', e => {
+document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && projectModal.classList.contains('active')) {
       closeProjectModal();
     }
@@ -334,6 +334,45 @@ if (projectModal) {
 
     if (e.key === 'ArrowRight' && projectModal.classList.contains('active')) {
       moveProjectGallery(1);
+    }
+  });
+}
+
+// ========== BUSINESS SUMMARY MODAL ==========
+const businessSummaryOpen = document.getElementById('businessSummaryOpen');
+const businessSummaryModal = document.getElementById('businessSummaryModal');
+const businessSummaryClose = document.getElementById('businessSummaryClose');
+const businessSummaryContact = document.getElementById('businessSummaryContact');
+
+function openBusinessSummaryModal() {
+  businessSummaryModal.classList.add('active');
+  businessSummaryModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+}
+
+function closeBusinessSummaryModal() {
+  businessSummaryModal.classList.remove('active');
+  businessSummaryModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+}
+
+if (businessSummaryOpen && businessSummaryModal) {
+  businessSummaryOpen.addEventListener('click', openBusinessSummaryModal);
+  businessSummaryClose.addEventListener('click', closeBusinessSummaryModal);
+
+  businessSummaryModal.addEventListener('click', e => {
+    if (e.target === businessSummaryModal) {
+      closeBusinessSummaryModal();
+    }
+  });
+
+  if (businessSummaryContact) {
+    businessSummaryContact.addEventListener('click', closeBusinessSummaryModal);
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && businessSummaryModal.classList.contains('active')) {
+      closeBusinessSummaryModal();
     }
   });
 }
