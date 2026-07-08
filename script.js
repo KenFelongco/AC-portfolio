@@ -538,38 +538,6 @@ if (achievementProofModal) {
   });
 }
 
-// =========== CURSOR ===========
-const cursor = document.getElementById('cursor');
-const cursorRing = document.getElementById('cursorRing');
-let mouseX = 0, mouseY = 0;
-let ringX = 0, ringY = 0;
-
-if (window.matchMedia('(pointer: fine)').matches) {
-  document.addEventListener('mousemove', e => {
-    mouseX = e.clientX; mouseY = e.clientY;
-    cursor.style.left = mouseX + 'px';
-    cursor.style.top = mouseY + 'px';
-  });
-  function animateRing() {
-    ringX += (mouseX - ringX) * 0.12;
-    ringY += (mouseY - ringY) * 0.12;
-    cursorRing.style.left = ringX + 'px';
-    cursorRing.style.top = ringY + 'px';
-    requestAnimationFrame(animateRing);
-  }
-  animateRing();
-  document.querySelectorAll('a, button, .skill-card, .project-card, .contact-link').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursorRing.style.transform = 'translate(-50%,-50%) scale(1.5)';
-      cursorRing.style.borderColor = 'rgba(0,212,255,0.8)';
-    });
-    el.addEventListener('mouseleave', () => {
-      cursorRing.style.transform = 'translate(-50%,-50%) scale(1)';
-      cursorRing.style.borderColor = 'rgba(0,212,255,0.5)';
-    });
-  });
-}
-
 // =========== NAV SCROLL ===========
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
