@@ -43,8 +43,32 @@ const teamModalLabel = document.getElementById('teamModalLabel');
 const teamModalName = document.getElementById('teamModalName');
 const teamModalRole = document.getElementById('teamModalRole');
 const teamModalTags = document.getElementById('teamModalTags');
+const teamModalWork = document.getElementById('teamModalWork');
+const teamModalWorkTitle = document.getElementById('teamModalWorkTitle');
 const teamModalProjects = document.getElementById('teamModalProjects');
+const teamModalCoOwnerWork = document.getElementById('teamModalCoOwnerWork');
+const teamModalCoOwnerCompanies = document.getElementById('teamModalCoOwnerCompanies');
 const teamCards = document.querySelectorAll('#team .project-card');
+const memberCompanies = {
+  nonito: {
+    owner: [
+      {
+        title: 'R&N Statistical & Research Consultancy',
+        url: 'https://www.facebook.com/rnstatisticalresearchconsultancy'
+      },
+      {
+        title: 'WS Sublime Collective - Clothing Shop',
+        url: 'https://www.facebook.com/profile.php?id=61574905885373'
+      }
+    ],
+    coOwner: [
+      {
+        title: 'Seek Help Appointment',
+        url: 'https://www.facebook.com/profile.php?id=61581759684550'
+      }
+    ]
+  }
+};
 const memberProjects = {
   ken: [
     {
@@ -102,21 +126,58 @@ function openMemberProject(projectSlug) {
 }
 
 function renderTeamProjects(memberKey) {
+  const company = memberCompanies[memberKey];
   const projects = memberProjects[memberKey] || [];
 
-  if (!teamModalProjects) {
+  if (!teamModalProjects || !teamModalWork || !teamModalWorkTitle) {
     return;
   }
 
   teamModalProjects.innerHTML = '';
+  if (teamModalCoOwnerCompanies) {
+    teamModalCoOwnerCompanies.innerHTML = '';
+  }
+  if (teamModalCoOwnerWork) {
+    teamModalCoOwnerWork.hidden = true;
+  }
 
-  if (!projects.length) {
-    const emptyState = document.createElement('p');
-    emptyState.className = 'team-modal-project-empty';
-    emptyState.textContent = 'No projects listed yet.';
-    teamModalProjects.appendChild(emptyState);
+  if (company) {
+    teamModalWork.hidden = false;
+    teamModalWorkTitle.textContent = 'Company Owner';
+
+    company.owner.forEach(companyItem => {
+      const companyName = document.createElement('a');
+      companyName.className = 'team-modal-company-name';
+      companyName.textContent = companyItem.title;
+      companyName.href = companyItem.url;
+      companyName.target = '_blank';
+      companyName.rel = 'noopener';
+      teamModalProjects.appendChild(companyName);
+    });
+
+    if (teamModalCoOwnerWork && teamModalCoOwnerCompanies && company.coOwner?.length) {
+      teamModalCoOwnerWork.hidden = false;
+
+      company.coOwner.forEach(companyItem => {
+        const companyName = document.createElement('a');
+        companyName.className = 'team-modal-company-name';
+        companyName.textContent = companyItem.title;
+        companyName.href = companyItem.url;
+        companyName.target = '_blank';
+        companyName.rel = 'noopener';
+        teamModalCoOwnerCompanies.appendChild(companyName);
+      });
+    }
     return;
   }
+
+  if (!projects.length) {
+    teamModalWork.hidden = true;
+    return;
+  }
+
+  teamModalWork.hidden = false;
+  teamModalWorkTitle.textContent = 'Projects';
 
   projects.forEach(project => {
     const button = document.createElement('button');

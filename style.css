@@ -727,7 +727,8 @@ section { position: relative; z-index: 1; }
 }
 
 .team-image{
-  width:100%;
+  width:auto;
+  max-width:100%;
   height:100%;
   object-fit:contain;
   object-position:center center;
@@ -845,7 +846,8 @@ section { position: relative; z-index: 1; }
 }
 
 .team-modal-image{
-  width:100%;
+  width:auto;
+  max-width:100%;
   height:100%;
   object-fit:contain;
   object-position:center center;
@@ -853,6 +855,9 @@ section { position: relative; z-index: 1; }
 }
 
 .project-modal-image{
+  width:100%;
+  max-width:100%;
+  height:100%;
   object-position:center;
 }
 
@@ -1283,6 +1288,10 @@ section { position: relative; z-index: 1; }
   border:1px solid rgba(0,212,255,0.14);
 }
 
+.team-modal-work[hidden]{
+  display:none;
+}
+
 .team-modal-work h4{
   font-family:var(--font-head);
   font-size:0.95rem;
@@ -1329,6 +1338,28 @@ section { position: relative; z-index: 1; }
   color:var(--text2);
   font-size:0.92rem;
   line-height:1.75;
+}
+
+.team-modal-work .team-modal-company-name{
+  display:block;
+  margin:0;
+  padding:12px 14px;
+  border-radius:10px;
+  background:rgba(0,212,255,0.07);
+  border:1px solid rgba(0,212,255,0.16);
+  color:var(--heading);
+  font-weight:800;
+  line-height:1.45;
+  text-decoration:none;
+  transition:all 0.25s ease;
+}
+
+.team-modal-work .team-modal-company-name:hover,
+.team-modal-work .team-modal-company-name:focus-visible{
+  border-color:rgba(0,212,255,0.58);
+  color:var(--accent);
+  transform:translateY(-2px);
+  box-shadow:0 14px 34px rgba(0,0,0,0.28), 0 0 24px rgba(0,212,255,0.16);
 }
 
 .team-modal-body::after{
