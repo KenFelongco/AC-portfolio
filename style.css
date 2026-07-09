@@ -3123,14 +3123,29 @@ footer {
     justify-content: center;
     padding: 13px 18px;
   }
-  .phone-mockup { width: min(170px, 56vw); }
-  .phone-screen { padding: 42px 12px 12px; gap: 5px; }
-  .app-bar { height: 34px; }
+  .phone-mockup { width: clamp(196px, 62vw, 214px); }
+  .phone-screen { padding: 44px 12px 12px; gap: 5px; }
+  .phone-notch { width: 58px; height: 17px; }
+  .app-bar { height: 32px; border-radius: 10px; }
+  .dashboard-team-photo-card { min-height: 70px; }
+  .dashboard-team-photo-card img { min-height: 70px; }
+  .dashboard-metrics { gap: 4px; }
+  .dashboard-metric { padding: 6px 4px; }
+  .dashboard-metric span { font-size: 0.4rem; }
+  .dashboard-metric:nth-child(3) span { font-size: 0.32rem; }
   .dashboard-hero strong,
   .dashboard-metric strong { font-size: 0.76rem; }
+  .dashboard-card { padding: 7px 8px; }
+  .dashboard-grace-title { font-size: 0.58rem; line-height: 1.25; }
+  .dashboard-cross-icon { font-size: 0.86rem; margin: 0 4px; }
+  .dashboard-faith-card .dashboard-card-head span { font-size: 0.54rem; }
+  .dashboard-faith-card p { font-size: 0.52rem; line-height: 1.2; }
+  .dashboard-live-card { gap: 6px; padding-block: 8px; }
+  .dashboard-live-load-text { font-size: 0.52rem; }
+  .dashboard-live-load-track { height: 6px; }
   .dashboard-team span { width: 16px; height: 16px; }
-  .orbit-1 { width: 230px; height: 230px; }
-  .orbit-2 { width: 290px; height: 290px; }
+  .orbit-1 { width: 250px; height: 250px; }
+  .orbit-2 { width: 320px; height: 320px; }
 
   .section-inner {
     padding: 64px 18px;
