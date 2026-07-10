@@ -1,4 +1,53 @@
-  // ========== FEATURED IMAGE MODAL ==========
+// ========== AC POINTER ==========
+const supportsFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
+
+if (supportsFinePointer.matches) {
+  const pointerDot = document.createElement('span');
+  const pointerRing = document.createElement('span');
+  pointerDot.className = 'ac-pointer-dot';
+  pointerRing.className = 'ac-pointer-ring';
+  pointerDot.setAttribute('aria-hidden', 'true');
+  pointerRing.setAttribute('aria-hidden', 'true');
+  document.body.append(pointerDot, pointerRing);
+
+  let pointerX = window.innerWidth / 2;
+  let pointerY = window.innerHeight / 2;
+  let ringX = pointerX;
+  let ringY = pointerY;
+
+  const positionPointer = () => {
+    ringX += (pointerX - ringX) * 0.2;
+    ringY += (pointerY - ringY) * 0.2;
+
+    pointerDot.style.transform = 'translate3d(' + (pointerX - 4) + 'px, ' + (pointerY - 4) + 'px, 0)';
+    const ringSize = pointerRing.classList.contains('is-active') ? 52 : 38;
+    pointerRing.style.transform = 'translate3d(' + (ringX - ringSize / 2) + 'px, ' + (ringY - ringSize / 2) + 'px, 0)';
+    window.requestAnimationFrame(positionPointer);
+  };
+
+  document.addEventListener('pointermove', event => {
+    pointerX = event.clientX;
+    pointerY = event.clientY;
+    pointerDot.classList.add('is-visible');
+    pointerRing.classList.add('is-visible');
+  });
+
+  document.addEventListener('pointerover', event => {
+    pointerRing.classList.toggle(
+      'is-active',
+      Boolean(event.target.closest('a, button, input, textarea, select, [role="button"]'))
+    );
+  });
+
+  document.addEventListener('pointerleave', () => {
+    pointerDot.classList.remove('is-visible');
+    pointerRing.classList.remove('is-visible');
+  });
+
+  positionPointer();
+}
+
+// ========== FEATURED IMAGE MODAL ==========
 const featuredImages = document.querySelectorAll('.featured-image');
 const imageModal = document.getElementById('imageModal');
 const modalImage = document.getElementById('modalImage');
